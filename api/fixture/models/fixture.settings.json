@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fixtures",
+  "info": {
+    "name": "fixture"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "nama_fixture": {
+      "type": "string",
+      "required": true
+    },
+    "nama_brand": {
+      "type": "string",
+      "required": true
+    },
+    "tanggal_pembuatan": {
+      "type": "date"
+    },
+    "jumlah": {
+      "required": true,
+      "type": "integer"
+    },
+    "dimensi": {
+      "type": "string",
+      "required": true
+    },
+    "photo": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "repair": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "lokasi": {
+      "type": "string",
+      "required": true
+    },
+    "keterangan": {
+      "type": "richtext"
+    },
+    "visual": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

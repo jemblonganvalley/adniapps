@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "brands",
+  "info": {
+    "name": "brand"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "brand_name": {
+      "type": "string",
+      "required": true
+    },
+    "brand_pic": {
+      "type": "string",
+      "required": true
+    },
+    "brand_logo": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "brand_pic_email": {
+      "type": "email",
+      "unique": true,
+      "required": true
+    },
+    "marketing_name": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "active": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "brand_address": {
+      "type": "richtext",
+      "required": true
+    },
+    "brand_phone": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
